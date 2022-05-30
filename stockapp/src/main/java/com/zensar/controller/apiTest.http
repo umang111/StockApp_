@@ -1,0 +1,37 @@
+@url=http://localhost:8086/stockapp/stock
+get {{url}}
+###
+get {{url}}/3
+###
+post {{url}}
+Content-Type: application/json
+
+{
+    "name":"nagarro",
+    "market":"BSE",
+    "price":70
+}
+###
+post {{url}}
+Content-Type: application/xml
+Accept: application/xml 
+
+<stock>
+    <name>Cognizant</name>
+    <market>BSE</market>
+    <price>30</price>
+</stock>
+###
+
+put {{url}}/5
+Content-Type: application/json
+
+{
+    "name":"nagarro_new",
+    "market":"BSE",
+    "price":60
+}
+###
+delete {{url}}/2
+###
+delete {{url}}
